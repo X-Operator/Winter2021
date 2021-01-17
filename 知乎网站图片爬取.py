@@ -10,7 +10,7 @@ if __name__ == "__main__":
         'User-Agent':'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50'
     }    
     page_text = rq.get(url=url,headers=headers).text
-    ex = '<figure data-size="normal">.*?<img src="(.*?)" data-caption.*?</figure>'
+    ex = '<figure data-size="normal">.*?<img src="(.*?)" data.*?</figure>'
     img_list = re.findall(ex,page_text,re.S)
     index = 0
     for src in img_list:
